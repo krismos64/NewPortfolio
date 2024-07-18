@@ -30,14 +30,22 @@
                 <div class="link">
                     <div class='item_logo'> <a href="{{ user.linkedin }}"><img src='{{ asset('img/Icon-linkedin.png') }}'/><span>Linkedin</span></a></div>
                     <div class='item_logo'> <a href="{{ user.github }}"><img src='{{ asset('img/Icon-github.png') }}'/><span>Github</span></a></div>
+                
+{# Bouton Espace Administration #}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="admin_button">
+            <a href="{{ path('admin') }}" class="btn btn-primary">Admin</a>
+        </div><
+    {% endif %}
+
                 </div>
             </header>
         {% endfor %}
 
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/project">Projet</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/project">Projets</a></li>
                 <li><a href="/contact">Contact</a></li>  
             </ul>
         </nav>
@@ -64,12 +72,13 @@
 
             <div>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/project">Projet</a></li>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/project">Projets</a></li>
                     <li><a href="/contact">Contact</a></li>  
                 </ul>
                 <div class="make_myp">
-                    <p>Make with MYP <b> __</b></p>
+                    <p>Copyright ©  Portfolio. Christophe
+                Mostefaoui</p>
                 </div>
             </div>
         </footer>
