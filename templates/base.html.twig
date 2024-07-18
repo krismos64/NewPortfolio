@@ -8,6 +8,41 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <style>
+                .profil_picture {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    .profil_picture {
+                        width: 100px;
+                        height: 100px;
+                        margin: 0 auto;
+                    }
+
+                    .header {
+                        text-align: center;
+                    }
+
+                    .header h1, .header h3 {
+                        font-size: 1.5rem;
+                    }
+
+                    .hr_title {
+                        width: 50%;
+                        margin: 0 auto;
+                    }
+
+                    .intro_contact {
+                        padding: 1rem;
+                    }
+                }
+            </style>
         {% endblock %}
     </head>
 
@@ -31,14 +66,13 @@
                     <div class='item_logo'> <a href="{{ user.linkedin }}"><img src='{{ asset('img/Icon-linkedin.png') }}'/><span>Linkedin</span></a></div>
                     <div class='item_logo'> <a href="{{ user.github }}"><img src='{{ asset('img/Icon-github.png') }}'/><span>Github</span></a></div>
                     <div class='item_logo'> <a href="{{ asset('img/CV Christophe Mostefaoui.pdf') }}"><img src='{{ asset('img/Icon_CV.png') }}'/><span>Mon CV</span></a></div>
-                <div class='item_logo'> <a href="{{ asset('img/diplome.png') }}"><img src='{{ asset('img/Icon_diplome.png') }}'/><span>DWWM</span></a></div>
-{# Bouton Espace Administration #}
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div class="admin_button">
-            <a href="{{ path('admin') }}" class="btn btn-primary">Admin</a>
-        </div><
-    {% endif %}
-
+                    <div class='item_logo'> <a href="{{ asset('img/diplome.png') }}"><img src='{{ asset('img/Icon_diplome.png') }}'/><span>DWWM</span></a></div>
+                    {# Bouton Espace Administration #}
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <div class="admin_button">
+                            <a href="{{ path('admin') }}" class="btn btn-primary">Admin</a>
+                        </div>
+                    {% endif %}
                 </div>
             </header>
         {% endfor %}
@@ -78,8 +112,7 @@
                     <li><a href="/contact">Contact</a></li>  
                 </ul>
                 <div class="make_myp">
-                    <p>Copyright ©  Portfolio. Christophe
-                Mostefaoui</p>
+                    <p>Copyright ©  Portfolio. Christophe Mostefaoui</p>
                 </div>
             </div>
         </footer>
