@@ -17,29 +17,12 @@
             <p>Pour une question ou juste envie <br/> d'une discution</p>
             {% for user in users %}
             <div>
-                <span><ion-icon name="mail-outline" class="icon_contact"></ion-icon>{{ user.email }}</span>
-                <span><ion-icon name="call-outline" class="icon_contact phone"></ion-icon>{{ user.phone }}</span>
+                 <span><ion-icon name="mail-outline" class="icon_contact"></ion-icon><a href="mailto:{{ user.email }}">{{ user.email }}</a></span>
+                    <span><ion-icon name="call-outline" class="icon_contact phone"></ion-icon><a href="tel:{{ user.phone }}">{{ user.phone }}</a></span>
             </div>
             {% endfor %}
         </div>   
-        <div class="section-form">
-            <div class="form">
-            {{ form_start(form) }}
-                <span>
-                    {{ form_row(form.nom, {"label":"NOM"}) }}
-                </span>
-                <span>
-                    {{ form_row(form.prenom, {"label":"PRÉNOM"}) }}
-                </span>
-                <span>
-                    {{ form_row(form.email, {"label":"E-MAIL"}) }}
-                </span>
-                <span>
-                    {{ form_row(form.message, {"label":"MESSAGE"}) }}
-                </span>
-            {{ form_end(form) }}
-            </div>
-        </div>
+        
     </div>
 </section>
 {% endblock %}
