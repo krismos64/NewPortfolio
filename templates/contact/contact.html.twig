@@ -14,7 +14,7 @@
     <br>
     <div class="content_contact">
         <div class="information">
-            <p>Pour une question où juste envie <br/> d'une discution</p>
+            <p>Pour une question ou juste envie <br/> d'une discution</p>
             {% for user in users %}
             <div>
                 <span><ion-icon name="mail-outline" class="icon_contact"></ion-icon>{{ user.email }}</span>
@@ -32,7 +32,7 @@
                     {{ form_row(form.prenom, {"label":"PRÉNOM"}) }}
                 </span>
                 <span>
-                    {{ form_row(form.email, {"label":"EMAIL"}) }}
+                    {{ form_row(form.email, {"label":"E-MAIL"}) }}
                 </span>
                 <span>
                     {{ form_row(form.message, {"label":"MESSAGE"}) }}
