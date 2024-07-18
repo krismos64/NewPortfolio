@@ -1,0 +1,165 @@
+@import "../variables.scss";
+
+// --> Navbar de gauche 
+header {
+    border-right:2px solid $border_color;
+    width: 20%;
+    position: fixed;
+    height: 750px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media #{$medium-up}{
+        width:20%;
+        height: 100%;
+    }
+    .logo, %logo {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        vertical-align: middle;
+        margin: 5% 0 0 5%;
+        .circle{
+            height: 45px;
+            width: 45px;
+            font-size: 2em;
+            border-radius: 50%;
+            border:2px solid $second_color;
+            @include display-center;
+        }
+        span p{
+            font-weight: 900;
+            font-size: 1.25em;
+            margin-top: 15px;
+            @media #{$medium-up}{display: none;}  
+        }
+    }
+    .link{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 80%;
+        margin: 55px 0 0 15%;
+        .item_logo{
+
+            margin-bottom: 7%;
+            display: flex;
+            vertical-align: middle;
+            img{
+                margin-right: 20px;
+                height: 70%;
+                vertical-align: middle;
+                @media #{$medium-up}{margin-right: 0px;}  
+            }
+            span{
+                font-weight: 700;
+                font-size: 1.25em;
+                text-decoration: none;
+                @media #{$medium-up}{display: none;}  
+            }
+        }
+    }
+}
+// --> Navbar navigation
+nav {
+    height: 80px;
+    position: relative;
+    z-index: 1;
+    top: 15px;
+    width: 100%;
+    @include display-end;
+    vertical-align: middle;
+    @media #{$medium-up}{
+        width: auto;
+        right: -1%;
+    } 
+    ul{
+        margin-right: 5%;
+        li {
+            display: inline;
+            list-style: none;
+            text-align: end !important;
+            margin: 20px;
+            font-size: 1.3em;
+        }
+        
+    }
+}
+
+// -> Footer
+footer{
+    border-top : 2px solid $border_color;;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3 ;
+    position: relative;
+    margin-bottom:0;
+    height: 25%;
+    background-color: $white_color; 
+    .logo{
+        width: 110%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        vertical-align: middle;
+        margin: 5% 0 0 5%;
+        .circle{
+            height: 45px;
+            width: 45px;
+            font-size: 2em;
+            border-radius: 50%;
+            border:2px solid $second_color;
+            @include display-center;
+        }
+        span p {
+            font-weight: 900;
+            font-size: 1.25em;
+            margin-top: 15px;
+            @media #{$medium-up}{display: none;} 
+        }
+    }
+    .link{
+        @include display-center;
+        .item_logo{
+            display: flex;
+            img{
+                margin-right: 10px;
+                height: 70%;
+            }           
+        }        
+    }
+    ul {
+        height: 70px;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        left: 0;
+        @include display-end;
+        @media #{$medium-up}{width: auto;} 
+        li {
+            display: inline;
+            list-style: none;
+            margin: 20px;
+            @media #{$medium-up}{
+                font-size: small;
+                margin: 10%;
+            } 
+        }
+    }
+    .make_myp{
+        text-align: end;
+        margin-right: 10%;
+        p{
+            font-weight: 700;
+            color: $first_color;
+            font-size: 13px;
+            font-style: italic;
+        }
+    }
+}
+

@@ -1,0 +1,152 @@
+// ---> PAGE PROJET
+@import "../variables.scss";
+
+//  Ici ce trouve tous les elements de la page Projets 
+//  qui liste sous formes de "card" la liste de tous 
+//  ton travails. Grace a la boucle {%for%}, les projets
+//  son separer en deux et permet de de disposée les cards
+//  sur de deux cotée diferents.  
+
+section{
+    .all_projects{
+        margin: 10% 0 0 5%;
+        display: flex;
+        flex-direction: column;
+        @media #{$medium-up}{
+            margin: 0;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20%;
+        }
+        .box_project{
+            // border: 3px solid green;
+            margin-bottom: 4%;
+            padding: 2em;
+            width: 100%;
+            vertical-align: middle;
+            display: flex;
+            @media #{$medium-up}{
+                height: auto;
+                padding: auto;
+                @include display-column;
+            }
+            img{
+                z-index: 1;
+                position: relative;
+                width: 530px; 
+                height:350px;
+                border-radius: 15px;
+                @media #{$medium-up}{
+                    width: 250px;
+                    height: auto;
+                }
+            }
+            .projet_contents{
+                background-color: $first_color;
+                z-index:2;
+                width: 35%;
+                padding: 2em;
+                margin-top: 0;
+                position: absolute;
+                text-align: start;
+                align-content: center;
+                // margin-left: 35%;
+                // margin-top: 5%;
+                margin: 7% 0 0 35%;
+
+                @media #{$medium-up}{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 0;
+                    position: relative;
+                    width: 90%;
+                }
+                .projet_name{
+                    color: $white_color;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                }
+                .projet_description{
+                    color: $white_color;
+                    font-size: 0.8em;
+                }
+                .projet_linkPage{
+                    font-style: oblique;
+                    color: $background;
+                }
+            }
+            .projet_techno{
+                color: $third_color;
+                text-decoration: none;
+                list-style-type: none; 
+                font-size: 70px;
+                font-weight: 700;
+                opacity: 0.5;
+                z-index: 3;
+                left: 65%;
+                margin-top: 19%;
+                position: absolute;
+                @media #{$medium-up}{
+                    font-size: 50px;
+                    margin-bottom: 35%;
+                    text-align: start;
+                    left: 17%;
+                }
+            }
+        }
+        .right{
+            img{
+                margin-left: 45%;
+                @media #{$medium-up}{
+                    margin-left: 0;
+                }
+            }
+            .projet_contents{
+                margin-left: 17%;
+                @media #{$medium-up}{
+                    margin-left: 0;
+                }
+            }
+            .projet_techno{
+                left: 15%;
+                margin-top: 2%;
+                @media #{$medium-up}{
+                    font-size: 50px;
+                    margin-bottom: 20%;
+                    text-align: start;
+                    left: 17%;
+                }
+            }
+        }
+    }
+    .pagination{
+        // border:3px solid red;
+        width: 10%;
+        margin-left: 35%;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        @media #{$medium-up}{
+            margin-left: 45%;
+        }
+        span{
+        // border:3px solid blue;
+        padding: 0.75em;
+        font-size: 1.25em;
+        }
+        .current {
+        font-weight: 900;
+        color:$first_color;
+        }
+        .last, .next, .first, .previous {
+            background-color: $third_color;
+            opacity: 0.25;
+            border-radius: 5px;
+            margin: 0 15% 0 15%;
+        }
+
+        }
+    }
+   
