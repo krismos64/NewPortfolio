@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Entity\Projects;
 use App\Entity\Technologies;
+use Container8GVEYc1\getCrudUrlGeneratorService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -20,7 +21,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
              // redirect to some CRUD controller
-             $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
+             $routeBuilder = $this->get(getCrudUrlGeneratorService::class)->build();
              return $this->redirect($routeBuilder->setController(ProjectsCrudController::class)->generateUrl());
     }
 
